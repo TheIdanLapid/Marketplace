@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, Renderer2, OnInit } from '@angular/core';
+import { Directive, ElementRef, Input, Renderer2, OnInit, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appHighlightPrice]'
@@ -11,7 +11,17 @@ export class HighlightPriceDirective implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  @HostListener('mouseover')
+  onMouseOver() {
     this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', this.color);
+  }
+
+  @HostListener('mouseout')
+  onMouseOut() {
+    this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', 'white');
+  }
+
+  ngOnInit(): void {
+    // this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', this.color);
   }
 }
