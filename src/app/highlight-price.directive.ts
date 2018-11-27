@@ -22,6 +22,6 @@ export class HighlightPriceDirective implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', this.color);
+
   }
 }
