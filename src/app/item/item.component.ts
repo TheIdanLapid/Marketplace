@@ -19,8 +19,8 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddToCart(item: Item) {
-    this.addToCart.emit(item);
+  onAddToCart() {
+    this.addToCart.emit(this.item);
   }
 
   onRemoveFromCart() {

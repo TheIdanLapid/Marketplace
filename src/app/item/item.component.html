@@ -1,4 +1,4 @@
-<div class="item" *ngFor="let item of items">
+<div class="item">
   <div class="description">
     {{item.description}}
   </div>
@@ -8,5 +8,9 @@
   <div class="price">
     {{item.price}}$
   </div>
-  <button (click)="addToCart(item)" *ngIf="!existsInCart(item)"></button>
+
+  <button (click)="onAddToCart()" *ngIf="!existsInCart; else elseBlock">Add to cart</button>
+  <ng-template #elseBlock>
+    <button (click)="onRemoveFromCart()">Remove from cart</button>
+  </ng-template>
 </div>

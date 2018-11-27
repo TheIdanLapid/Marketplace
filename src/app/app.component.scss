@@ -13,11 +13,15 @@
           max-width: 200px;
           max-height: 200px;
       }
-      
   }
 
   .price{
       font-size: 15px;
       font-style: italic;
   }
+}
+
+.shopping-cart{
+    border: 2px solid red;
+    margin-bottom: 50px;
 }
