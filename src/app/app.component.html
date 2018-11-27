@@ -1,9 +1,6 @@
-<input [(ngModel)]="name">
-My name is {{name}}
-
 <div class="item" *ngFor="let item of items">
   <div class="description">
-      {{item.description}}
+    {{item.description}}
   </div>
   <div class="imageUrl">
     <img [src]="item.imageUrl">
@@ -11,5 +8,5 @@ My name is {{name}}
   <div class="price">
     {{item.price}}$
   </div>
+  <button (click)="addToCart(item)" *ngIf="!existsInCart(item)"></button>
 </div>
-<router-outlet></router-outlet>
